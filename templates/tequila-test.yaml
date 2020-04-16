@@ -16,7 +16,10 @@ spec:
           data: |
             import json
             import tequila as tq
-            out = dict()
+            import myscript
+
+            out = myscript.run()
+
             out['schema'] = "tequila-test"
             out['my name is'] = "AndreasDorn"
             out['message'] = "At the time it seemed like a good idea"
