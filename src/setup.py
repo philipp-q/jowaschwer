@@ -19,6 +19,7 @@ setup(
     author_email='jakob.kottmann@gmail.com',
     install_requires=[ # also requires jax+jaxlib or autograd
         'numpy',
+        'cmake',
         'scipy',
         'jax',
         'jaxlib',
@@ -29,8 +30,7 @@ setup(
         'qulacs',
         'cirq',
         'sphinx',
-        'm2r', 
-        'cmake'
+        'm2r' 
     ] + additional,
     extras_require={
         ':python_version < "3.7"': extras_3_6,
