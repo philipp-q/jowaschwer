@@ -19,9 +19,9 @@ spec:
             out = dict()
             out['schema'] = "tequila-test"
             out['andreas'] = "dorn"
-            message="At the time it seemed like a good idea"
+            out['message'] = "At the time it seemed like a good idea"
             with open('output.json', 'w') as f:
-              f.write(json.dumps(message))
+              f.write(json.dumps(out))
     outputs:
       artifacts:
       - name: out
