@@ -12,7 +12,7 @@ resources:
   type: git
   parameters:
     url: "git@github.com:kottmanj/jowaleicht.git"
-    branch: "master"
+    branch: "master" # change this to your banch
 #- name: z-quantum-core
 #  type: git
 #  parameters:
