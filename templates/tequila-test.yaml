@@ -16,9 +16,9 @@ spec:
           data: |
             import json
             import tequila as tq
-            import myscript
+            from tequila.myscript import run
 
-            out = myscript.run()
+            out = run()
 
             out['schema'] = "tequila-test"
             out['my name is'] = "AndreasDorn"

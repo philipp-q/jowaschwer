@@ -13,13 +13,6 @@ extras_3_7 = []
 additional = []
 
 setup(
-    name="myscript",
-    version="6.6.6",
-    py_modules=['myscript']
-)
-
-
-setup(
     name='tequila',
     version="Orquestra-Test",
     author='Jakob S. Kottmann, Sumner Alperin-Lea, Teresa Tamayo-Mendoza, Cyrille Lavigne, Abhinav Anand, Maha Kesebi ...',
