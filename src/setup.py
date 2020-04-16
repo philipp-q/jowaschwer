@@ -44,3 +44,17 @@ setup(
     }
 )
 
+setuptools.setup(
+    name                            = "mycode",
+    packages                        = setuptools.find_packages(where = "mycode"),
+    package_dir                     = {
+        "" : "mycode"
+    },
+    classifiers                     = (
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ),
+    install_requires=[
+        'tequila'
+        ]
+)
