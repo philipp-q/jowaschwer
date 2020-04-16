@@ -52,7 +52,7 @@ def run(*args, **kwargs):
     print("fidelity with true groundstate: ", numpy.abs(wfn.inner(true_wfn))**2)
     
     results = {"energy": result.energy, "opt_result":result}
-    return result
+    return results
 
 Hstring ="""(-0.05464328026292111+0j) [] +
 (-0.03612215216611762+0j) [X0] +
