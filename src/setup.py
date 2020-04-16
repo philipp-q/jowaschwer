@@ -43,3 +43,9 @@ setup(
         '': [os.path.join('src')]
     }
 )
+
+setup(
+    name="myscript",
+    version="6.6.6",
+    py_modules=['myscript']
+)
