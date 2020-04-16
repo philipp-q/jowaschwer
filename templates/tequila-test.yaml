@@ -17,8 +17,11 @@ spec:
             import json
             import tequila as tq
             from mycode import run
+            
+            geometry = "H 0.0 0.0 0.0\nH 0.0 0.0 0.7"
+            basis = "sto-3g"
 
-            out = run()
+            out = run(geometry=geometry, basis_set=basis)
 
             out['schema'] = "tequila-test"
             out['my name is'] = "AndreasDorn"
