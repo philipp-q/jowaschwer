@@ -1,0 +1,57 @@
+# Workflow API version
+ZapOSApiVersion: v1alpha1
+
+# Declares this as workflow
+kind: Workflow
+
+# List resources needed by workflow.
+resources:
+
+#
+- name: tequila
+  type: git
+  parameters:
+    url: "git@github.com:kottmanj/jowaleicht.git"
+    branch: "master"
+#- name: z-quantum-core
+#  type: git
+#  parameters:
+#    url: "git@github.com:zapatacomputing/z-quantum-core.git"
+#    branch: "master"
+
+# Data to help you easily work with your workflow
+metadata:
+
+  # Prefix for workflow ID
+  generateName: tequila-test-
+
+# Data for running the workflow
+spec:
+
+  # Think of this as identifying the `main` function -- this tells the workflow which template to start with
+  entrypoint: tq-test
+
+  # Initializing global variables for use in workflow
+  arguments:
+    parameters:
+
+    # Where output data is stored -- Must be `quantum-engine` for compatibility with Orquestra data services
+    - s3-bucket: quantum-engine
+    # Path where output data is stored within the `s3-bucket` -- can be anything you want
+    - s3-key: hackathon/tequila-test/
+
+  # The steps of the workflow
+  templates:
+  - name: tq-test
+    steps:
+
+    # Run the full test
+    - - name: run-it
+        template: tequila-test
+        arguments:
+          parameters:
+          - angle: '0.5'
+          - resources: [tequila]
+          #- resources: [z-quantum-core, qulacs-t]
+          - docker-image: z-quantum-default
+          - docker-tag: latest
