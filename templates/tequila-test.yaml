@@ -1,0 +1,26 @@
+spec:
+  templates:
+
+  # Test simple import of booze
+  - name: tequila-test
+    parent: generic-task
+    inputs:
+      parameters:
+      - name: angle
+      - name: command
+        value: python3 main_script.py
+      artifacts:
+      - name: main-script
+        path: /app/main_script.py
+        raw:
+          data: |
+            import json
+            import tequila as tq
+            out['schema'] = "tequila-test"
+            message="At the time it seemed like a good idea"
+            with open('output.json', 'w') as f:
+              f.write(json.dumps(message))
+    outputs:
+      artifacts:
+      - name: out
+        path: /app/output.json
