@@ -16,7 +16,7 @@ spec:
           data: |
             import json
             import tequila as tq
-            from tequila.myscript import run
+            from mycode import run
 
             out = run()
 
