@@ -16,7 +16,9 @@ spec:
           data: |
             import json
             import tequila as tq
+            out = dict()
             out['schema'] = "tequila-test"
+            out['andreas'] = "dorn"
             message="At the time it seemed like a good idea"
             with open('output.json', 'w') as f:
               f.write(json.dumps(message))
