@@ -4,7 +4,7 @@ import pickle
 
 
 def run(basis_set, geometry, active_orbitals=None):
-    molecule = tq.chemistry.Molecule(basis_set=basis, geometry=geometry, active_orbitals=active_orbitals)
+    molecule = tq.chemistry.Molecule(basis_set=basis_set, geometry=geometry, active_orbitals=active_orbitals)
     
     H = molecule.make_hamiltonian()
 
@@ -97,13 +97,5 @@ def run(basis_set, geometry, active_orbitals=None):
     #plt.show()
 
     return {"energies":history.extract_energies()}
-
-if __name__ == "__main__":
-
-    geometry = "H 0.0 0.0 0.0\nH 0.0 0.0 0.7"
-    basis = "sto-3g"
-    active_space = None #{"a1":[1,2,3]}
-    
-    run(geometry=geometry, basis_set=basis)
 
 

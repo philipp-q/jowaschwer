@@ -19,9 +19,7 @@ spec:
             from mycode import run
             
             geometry = "H 0.0 0.0 0.0\nH 0.0 0.0 0.7"
-            basis = "sto-3g"
-
-            out = run(geometry=geometry, basis_set=basis)
+            out = run(geometry=geometry, basis_set="sto=3g")
 
             out['schema'] = "tequila-test"
             out['my name is'] = "AndreasDorn"
