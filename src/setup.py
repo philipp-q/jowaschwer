@@ -56,5 +56,6 @@ setuptools.setup(
     ),
     install_requires=[
         'tequila'
-        ]
+        ],
+    include_package_data=True
 )
