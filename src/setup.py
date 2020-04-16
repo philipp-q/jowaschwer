@@ -29,7 +29,7 @@ setup(
         'qulacs',
         'cirq',
         'sphinx',
-        'm2r' 
+        'm2r', 
         'cmake'
     ] + additional,
     extras_require={
