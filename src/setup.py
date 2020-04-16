@@ -29,7 +29,8 @@ setup(
         'qulacs',
         'cirq',
         'sphinx',
-        'm2r'       
+        'm2r' 
+        'cmake'
     ] + additional,
     extras_require={
         ':python_version < "3.7"': extras_3_6,
