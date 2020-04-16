@@ -15,19 +15,21 @@ print("True Ground State Wfn    = ", true_wfn)
 print("--------------------------\n")
 
 # An example of how to build a circuit and optimize itL Should be replaced by an ansatz that actually can solve the thing
-U = tq.gates.Ry(angle="a", target=0)
-U += tq.gates.Ry(angle="b", target=1)
-U += tq.gates.Ry(angle="c", target=1)
-U += tq.gates.Ry(angle="d", target=1)
-U += tq.gates.X(target=0, control=1)
-U += tq.gates.X(target=1, control=2)
-U += tq.gates.X(target=2, control=3)
+# thats now the 4-layer circuit Hannah said
+for i in range(4):
+    U = tq.gates.Ry(angle=("a",i), target=0)
+    U += tq.gates.Ry(angle=("b",i), target=1)
+    U += tq.gates.Ry(angle=("c",i), target=2)
+    U += tq.gates.Ry(angle=("d",i), target=3)
+    U += tq.gates.Z(target=0, control=1)
+    U += tq.gates.Z(target=1, control=2)
+    U += tq.gates.Z(target=2, control=3)
 
 print("Circuit Ansatz is:")
 tq.draw(U)
 
 # build an objective/expectationvalue
-E = tq.ExpectationValue(H=H, U=U)
+E = tq.ExpectationValue(H=H, U=U) # this would be the energy, for compression you need a different one
 
 # simulate the wavefunction or the full expectationvalue for a given set of parameters/variables
 # Just to play around, not necessary
