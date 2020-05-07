@@ -28,14 +28,8 @@ resources:
   parameters:
     url: "git@github.com:zapatacomputing/qe-psi4.git"
     branch: "master"
-    
-    
-    
-    #- name: z-quantum-core
-#  type: git
-#  parameters:
-#    url: "git@github.com:zapatacomputing/z-quantum-core.git"
-#    branch: "master"
+
+
 
 # Data to help you easily work with your workflow
 metadata:
