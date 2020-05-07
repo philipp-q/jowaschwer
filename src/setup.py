@@ -34,7 +34,6 @@ setup(
         'z-quantum-core', # no idea if needed
         'qe-openfermion', # needed for qe-psi4 anyways
         'qe-psi4'
-    ]
     ] + additional,
     extras_require={
         ':python_version < "3.7"': extras_3_6,
