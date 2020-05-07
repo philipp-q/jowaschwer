@@ -1,7 +1,7 @@
 import tequila as tq
 import numpy as np
 import pickle
-
+import qepsi4
 
 def run(basis_set, geometry, active_orbitals=None):
     molecule = tq.chemistry.Molecule(basis_set=basis_set, geometry=geometry, active_orbitals=active_orbitals)
