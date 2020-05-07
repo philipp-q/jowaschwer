@@ -69,7 +69,7 @@ spec:
         arguments:
           parameters:
           - angle: '0.5'
-          - resources: [z-quantum-core, qe-psi4, tequila]
+          - resources: [z-quantum-core, qe-openfermion, qe-psi4, tequila]
           #- resources: [z-quantum-core, qulacs-t]
           - docker-image: z-quantum-default
           - docker-tag: latest
