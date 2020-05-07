@@ -2,11 +2,11 @@ spec:
   templates:
 
   # Test simple import of booze
-  - name: tequila-test
+  - name: sum-of-squares 
     parent: generic-task
     inputs:
       parameters:
-      - name: angle
+      - name: array
       - name: command
         value: python3 main_script.py
       artifacts:
@@ -15,16 +15,14 @@ spec:
         raw:
           data: |
             import json
-            import tequila as tq
-            from mycode import run
+            from sum_squares import main 
             
-            geometry = "H 0.0 0.0 0.0\nH 0.0 0.0 0.7"
-            out = run(geometry=geometry, basis_set="sto-3g")
+            out = run(array=array)
 
-            out['schema'] = "tequila-test"
+            out['schema'] = "output-processing"
             with open('output.json', 'w') as f:
-              f.write(json.dumps(out['energies']))
+              f.write(json.dumps(out))
     outputs:
       artifacts:
-      - name: energies 
-        path: /app/output.json
+      - name: sum-squares 
+        path: /app/sum-squares.json
