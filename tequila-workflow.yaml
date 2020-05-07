@@ -13,11 +13,11 @@ resources:
   parameters:
     url: "git@github.com:philipp-q/jowaschwer.git"
     branch: "master" # change this to your banch
-- name: z-quantum-core
-  type: git
-  parameters:
-    url: "git@github.com:zapatacomputing/z-quantum-core.git"
-    branch: "master"
+#- name: z-quantum-core
+#  type: git
+#  parameters:
+#    url: "git@github.com:zapatacomputing/z-quantum-core.git"
+#    branch: "master"
 - name: qe-openfermion
   type: git
   parameters:
@@ -69,7 +69,6 @@ spec:
         arguments:
           parameters:
           - angle: '0.5'
-          - resources: [z-quantum-core, qe-openfermion, qe-psi4, tequila]
-          #- resources: [z-quantum-core, qulacs-t]
+          - resources: [qe-openfermion, qe-psi4, tequila]
           - docker-image: qe-psi4 
           - docker-tag: latest

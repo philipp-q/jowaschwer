@@ -31,7 +31,6 @@ setup(
         'cirq',
         'sphinx',
         'm2r',
-        'z-quantum-core', # no idea if needed
         'qe-openfermion', # needed for qe-psi4 anyways
         'qe-psi4'
     ] + additional,
