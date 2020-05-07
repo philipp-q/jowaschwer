@@ -11,9 +11,27 @@ resources:
 - name: tequila
   type: git
   parameters:
-    url: "git@github.com:kottmanj/jowaleicht.git"
+    url: "git@github.com:philipp-q/jowaschwer.git"
     branch: "master" # change this to your banch
-#- name: z-quantum-core
+- name: z-quantum-core
+  type: git
+  parameters:
+    url: "git@github.com:zapatacomputing/z-quantum-core.git"
+    branch: "master"
+- name: qe-openfermion
+  type: git
+  parameters:
+    url: "git@github.com:zapatacomputing/qe-openfermion.git"
+    branch: "master"
+- name: qe-psi4
+  type: git
+  parameters:
+    url: "git@github.com:zapatacomputing/qe-psi4.git"
+    branch: "master"
+    
+    
+    
+    #- name: z-quantum-core
 #  type: git
 #  parameters:
 #    url: "git@github.com:zapatacomputing/z-quantum-core.git"
@@ -51,7 +69,7 @@ spec:
         arguments:
           parameters:
           - angle: '0.5'
-          - resources: [tequila]
+          - resources: [z-quantum-core, qe-psi4, tequila]
           #- resources: [z-quantum-core, qulacs-t]
           - docker-image: z-quantum-default
           - docker-tag: latest
