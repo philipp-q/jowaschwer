@@ -63,6 +63,7 @@ spec:
         arguments:
           parameters:
           - angle: '0.5'
+          - basis_set: 'sto-3g'
           - resources: [z-quantum-core, qe-openfermion, qe-psi4, tequila]
           - docker-image: qe-psi4 
           - docker-tag: latest
@@ -72,6 +73,5 @@ spec:
         template: sum-of-squares
         arguments:
           artifacts:
-          parameters:
-            - array: "{steps.sum-of-squares.artifacts.energies}"
+            - array: "{{steps.sum-of-squares.outputs.artifacts.energies}}"
 

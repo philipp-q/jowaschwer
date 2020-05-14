@@ -7,6 +7,7 @@ spec:
     inputs:
       parameters:
       - name: angle
+      - name: basis_set
       - name: command
         value: python3 main_script.py
       artifacts:
@@ -19,7 +20,7 @@ spec:
             from mycode import run
             
             geometry = "H 0.0 0.0 0.0\nH 0.0 0.0 0.7"
-            out = run(geometry=geometry, basis_set="sto-3g")
+            out = run(geometry=geometry, basis_set='{{inputs.parameters.basis_set}}')
 
             out['schema'] = "tequila-test"
             with open('output.json', 'w') as f:
