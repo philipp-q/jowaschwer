@@ -24,7 +24,7 @@ spec:
 
             out['schema'] = "tequila-test"
             with open('energies.json', 'w') as f:
-              f.write(json.dumps(out))
+              f.write(json.dumps(out['energies']))
     outputs:
       artifacts:
       - name: energies 
