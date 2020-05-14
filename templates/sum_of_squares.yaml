@@ -17,7 +17,7 @@ spec:
             import json
             from sum_squares import main 
             
-            out = run(array=array)
+            out = main(array=array)
 
             out['schema'] = "output-processing"
             with open('output.json', 'w') as f:

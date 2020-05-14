@@ -73,5 +73,6 @@ spec:
         template: sum-of-squares
         arguments:
           artifacts:
-            - array: "{{steps.sum-of-squares.outputs.artifacts.energies}}"
+            - array:
+                from: "{{steps.tequila-test.outputs.artifacts.energies}}"
 
