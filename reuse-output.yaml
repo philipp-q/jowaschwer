@@ -72,4 +72,4 @@ spec:
         arguments:
           artifacts:
             - array:
-                from: '{{steps.tequila-test.outputs.artifacts.energies}}'
+                from: "{{steps.tequila-test.outputs.artifacts.energies}}"

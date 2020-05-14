@@ -96,6 +96,6 @@ def run(basis_set, geometry, active_orbitals=None):
     #plt.legend()
     #plt.show()
 
-    return {"energies":history.extract_energies()}
+    return {"energies": energies}
 
 
