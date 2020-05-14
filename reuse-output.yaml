@@ -57,7 +57,7 @@ spec:
   - name: tq-test
     steps:
 
-    # Run the full test
+    # Run the tequila test (get some energies)
     - - name: tequila-test 
         template: tequila-test
         arguments:
@@ -67,12 +67,9 @@ spec:
           - resources: [z-quantum-core, qe-openfermion, qe-psi4, tequila]
           - docker-image: qe-psi4 
           - docker-tag: latest
-  - name: sum-squares
-    steps:
     - - name: sum-of-squares 
         template: sum-of-squares
         arguments:
           artifacts:
             - array:
-                from: "{{steps.tequila-test.outputs.artifacts.energies}}"
-
+                from: '{{steps.tequila-test.outputs.artifacts.energies}}'
