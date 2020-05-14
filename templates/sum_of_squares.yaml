@@ -21,7 +21,7 @@ spec:
             out = main(array=array)
 
             out['schema'] = "output-processing"
-            with open('output.json', 'w') as f:
+            with open('sum-squares.json', 'w') as f:
               f.write(json.dumps(out))
     outputs:
       artifacts:
