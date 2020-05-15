@@ -17,8 +17,10 @@ spec:
         raw:
           data: |
             import json
-            from sum_squares import main 
-            
+            from sum_squares import main
+
+            with open('energies.json') as f:
+              dictio = json.load(f) 
             out = main(dictio=dictio)
 
             out['schema'] = "output-processing"
