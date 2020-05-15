@@ -6,6 +6,7 @@
 def main(dictio):
     out = 0.0
     for key in dictio.keys():
-        out += dictio[key]**2
+        for kkeyy in dictio[key].keys():
+            out += dictio[key][kkeyy]**2
 
     return {'value': out}

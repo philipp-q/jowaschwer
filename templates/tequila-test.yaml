@@ -21,9 +21,6 @@ spec:
             
             geometry = "H 0.0 0.0 0.0\nH 0.0 0.0 0.7"
             out = run(geometry=geometry, basis_set='{{inputs.parameters.basis_set}}')
-            for key in out.keys():
-              for kkey in key:
-                print(out[key[kkey]])
             out['schema'] = "tequila-test"
             with open('energies.json', 'w') as f:
               f.write(json.dumps(out))
