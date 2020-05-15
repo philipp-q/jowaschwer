@@ -6,12 +6,12 @@ spec:
     parent: generic-task
     inputs:
       parameters:
-      - name: dictio
+      #- name: dictio
       - name: command
         value: python3 main_script.py
       artifacts:
-      #- name: dictio
-      #  path: /app/energies.json
+      - name: dictio
+        path: /app/energies.json
       - name: main-script
         path: /app/main_script.py
         raw:

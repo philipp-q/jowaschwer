@@ -74,6 +74,6 @@ spec:
           - resources: [z-quantum-core, qe-openfermion, qe-psi4, tequila]
           - docker-image: qe-psi4 
           - docker-tag: latest
-            artifacts:
-            - dictio:
-                from: "{{steps.tequila-test.outputs.artifacts.energies}}"
+          artifacts:
+          - dictio:
+              from: "{{steps.tequila-test.outputs.artifacts.energies}}"
