@@ -71,10 +71,9 @@ spec:
         template: sum-of-squares
         arguments:
           parameters:
-          - array: '[0, 1, 2]'
           - resources: [z-quantum-core, qe-openfermion, qe-psi4, tequila]
           - docker-image: qe-psi4 
           - docker-tag: latest
-            #artifacts:
-            #- array: [0, 1, 2]
-                  # from: "{{steps.tequila-test.outputs.artifacts.energies}}"
+            artifacts:
+            - dictio:
+                from: "{{steps.tequila-test.outputs.artifacts.energies}}"

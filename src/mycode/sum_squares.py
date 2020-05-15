@@ -3,9 +3,9 @@
 
 #import numpy as np
 
-def main(array):
+def main(dictio):
     out = 0.0
-    for elem in array:
-        out += elem**2
+    for key in dictio.keys():
+        out += dictio[key]**2
 
     return {'value': out}

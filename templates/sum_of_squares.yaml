@@ -6,11 +6,11 @@ spec:
     parent: generic-task
     inputs:
       parameters:
-      - name: array
+      - name: dictio
       - name: command
         value: python3 main_script.py
       artifacts:
-      #- name: array
+      #- name: dictio
       #  path: /app/energies.json
       - name: main-script
         path: /app/main_script.py
@@ -19,7 +19,7 @@ spec:
             import json
             from sum_squares import main 
             
-            out = main(array=array)
+            out = main(dictio=dictio)
 
             out['schema'] = "output-processing"
             with open('sum-squares.json', 'w') as f:
