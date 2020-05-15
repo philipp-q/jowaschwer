@@ -72,13 +72,13 @@ def run(basis_set, geometry, active_orbitals=None):
     result = tq.optimizer_scipy.minimize(E, method=method, initial_values=variables)
     history = result.history
 
-    print("Computations Ended:")
-    print("RHF  energy = {:8.5f} ", energy_hf)
-    print("MP2  energy = {:8.5f} ", energy_mp2)
-    print("MP2  energy = {:8.5f} ", energy_cc2)
-    print("CCSD energy = {:8.5f} ", energy_ccsd)
-    print("FCI  energy = {:8.5f} ", energy_fci)
-    print("VQE  energy = {:8.5f} ",  result.energy)
+    # print("Computations Ended:")
+    # print("RHF  energy = {:8.5f} ", energy_hf)
+    # print("MP2  energy = {:8.5f} ", energy_mp2)
+    # print("MP2  energy = {:8.5f} ", energy_cc2)
+    # print("CCSD energy = {:8.5f} ", energy_ccsd)
+    # print("FCI  energy = {:8.5f} ", energy_fci)
+    # print("VQE  energy = {:8.5f} ",  result.energy)
 
     with open("history.pickle", "wb") as f:
         pickle.dump(result.history, f, pickle.HIGHEST_PROTOCOL)
@@ -95,6 +95,8 @@ def run(basis_set, geometry, active_orbitals=None):
     #plt.plot([-(energy_fci-e) for e in energies.values()], label="|FCI-VQE|", marker="o", linestyle="--")
     #plt.legend()
     #plt.show()
+
+    print({'energies': energies}
 
     return {"energies": energies}
 
