@@ -23,7 +23,7 @@ spec:
             out = run(geometry=geometry, basis_set='{{inputs.parameters.basis_set}}')
             out['schema'] = "tequila-test"
             with open('energies.json', 'w') as f:
-              f.write(json.dumps(out))
+              f.write(json.dumps(out['energies']))
     outputs:
       artifacts:
       - name: energies 

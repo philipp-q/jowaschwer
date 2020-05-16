@@ -21,7 +21,7 @@ spec:
 
             with open('energies.json') as f:
               dictio = json.load(f) 
-            print(dictio)
+            print(dictio) 
             out = main(dictio=dictio)
 
             out['schema'] = "output-processing"
